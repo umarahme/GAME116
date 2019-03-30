@@ -2,7 +2,7 @@ package Game116
 
 object Game {
 
-
+/* Jessie is Daddy */
   def addPotion(p: Player, health: HealthPotion): Unit = {
     if(Math.abs(p.loc.x-health.Loc.x) <=2 && Math.abs(p.loc.y-health.Loc.y)<=2) {
       if (p.health == 100) {
