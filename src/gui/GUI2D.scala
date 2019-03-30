@@ -44,6 +44,7 @@ object GUI2D extends JFXApp {
   }
 
 
+
   def keyPressed(keyCode: KeyCode): Unit = {
     keyCode.getName match {
       case "W" => player.translateY.value -= playerSpeed
@@ -69,10 +70,16 @@ object GUI2D extends JFXApp {
 
     // define a function for the action timer (Could also use a method)
     // Rotate all rectangles (relies on frame rate. lag will slow rotation)
+
+
+    //
     val update: Long => Unit = (time: Long) => {
       for (shape <- allRectangles) {
         shape.rotate.value += 0.5
-      }
+    }
+    //
+
+
     }
 
     // Start Animations. Calls update 60 times per second (takes update as an argument)
