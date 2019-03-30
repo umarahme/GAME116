@@ -1,3 +1,3 @@
-class UmarSucksAlmonds {
+class DeVantesucksCashews {
 
 }
