@@ -1,7 +1,14 @@
 package Game116
 
-object Game {
+import gui.GameGUI
+import gui.GameGUI.sceneGraphics
 
+import scala.collection.mutable.ListBuffer
+
+object Game {
+  var game: gameState = new gameState
+  var potionCount: Double = 10 /*thinking about doing game.world.players.length and multiplying it by an amount based on how many players we have*/
+  var weaponCount: Double = 20
 /* Jessie is Daddy */
   def addPotion(p: Player, health: HealthPotion): Unit = {
     if(Math.abs(p.loc.x-health.Loc.x) <=2 && Math.abs(p.loc.y-health.Loc.y)<=2) {
@@ -22,12 +29,18 @@ object Game {
       p.health = p.health - w.damage
     }
   }
+  def generateLocation:Location = {
+    val x: Double = Math.random() * GameGUI.windowWidth
+    val y: Double = Math.random() * GameGUI.windowHeight
+    val newLoc: Location = new Location(x, y)
+    newLoc
+  }
 
   def eliminatePlayer(w:World): Unit = {
     var i: Int = 0
-    var first: List[Player] = List()
-    var end: List[Player] = List()
-    var temp: List[Player] = List()
+    var first = new ListBuffer[Player]
+    var end = new ListBuffer[Player]
+    var temp = new ListBuffer[Player]
     if(w.players.length>0){
       for (p <- w.players){
         if (p.health == 0){
@@ -49,10 +62,27 @@ object Game {
       }
     }
   }
+  def generatePotions(): Unit = {
+    var potionList: ListBuffer[HealthPotion] = game.world.potions
+    while (potionList.length < potionCount){
+      var newPotion: HealthPotion = new HealthPotion(generateLocation)
+      potionList = potionList :+ newPotion
+      sceneGraphics.children.add(newPotion.Icon)
+    }
+  }
+  def generateWeapons(): Unit = {
+    var weaponList: ListBuffer[Weapons] = game.world.weapons
+    while (weaponList.length < weaponCount){
+      var newWeapon: Weapons = new Weapons(generateLocation)
+      weaponList = weaponList :+ newWeapon
+      sceneGraphics.children.add(newWeapon.Icon)
+    }
+  }
+  //can reuse these functions to generate and add them to the game
 
 
   def main(args: Array[String]): Unit = {
-    var nLoc: Location = new Location(5,4)
+    /*var nLoc: Location = new Location(5,4)
     var loc2: Location = new Location(5,7)
     var player1: Player = new Player("DeVante",nLoc)
     var player2: Player = new Player("Patryk",loc2)
@@ -60,7 +90,7 @@ object Game {
 
     println(player2.health)
 
-
+*/
   }
   /*
   def checkWinner(w:Game116.World): Game116.Player = {
