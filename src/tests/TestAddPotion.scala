@@ -7,7 +7,7 @@ import Game116.Location
 import Game116.Player
 
 
-
+/*
 class TestAddPotion extends FunSuite{
   test("test changing health"){
     var nLoc: Location = new Location(5,4)
@@ -46,3 +46,5 @@ class TestAddPotion extends FunSuite{
 
   }
 }
+
+*/

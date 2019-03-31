@@ -1,18 +1,50 @@
 package Game116
 
-object Game {
 
+import scalafx.scene.paint.Color
+import gui.OurGUI
+import gui.OurGUI.{SCENE, newPotion}
+
+class Game {
+
+  var p1: Player = new Player("DeVante",new Location(Math.random()*500,Math.random()*500))
+  var p2: Player = new Player("Umar",new Location(Math.random()*500,Math.random()*500))
+  var h1: HealthPotion = new HealthPotion(new Location(Math.random()*500,Math.random*500))
+
+  def update(deltaTime: Double): Unit = {
+    p1.update(deltaTime)
+  }
 
   def addPotion(p: Player, health: HealthPotion): Unit = {
     if(Math.abs(p.loc.x-health.Loc.x) <=2 && Math.abs(p.loc.y-health.Loc.y)<=2) {
       if (p.health == 100) {
         p.health = 100
+        health.potion = 0
       } else if (p.health + health.potion >= 100) {
         p.health = 100
+        health.potion = 0
       } else {
         p.health = p.health + health.potion
+        health.potion = 0
       }
+      //OurGUI.newPotion.fill = Color.White
+      SCENE.children.add(OurGUI.usedPotion)
     }
+    if(Math.abs(p.loc.x-health.Loc.x) <=2 && Math.abs(p.loc.y-health.Loc.y)<=2) {
+      if (p.health == 100) {
+        p.health = 100
+        health.potion = 0
+      } else if (p.health + health.potion >= 100) {
+        p.health = 100
+        health.potion = 0
+      } else {
+        p.health = p.health + health.potion
+        health.potion = 0
+      }
+      //OurGUI.newPotion.fill = Color.White
+      SCENE.children.add(OurGUI.usedPotion)
+    }
+
   }
 
   def causeDamage(p:Player, w: Weapons): Unit = {

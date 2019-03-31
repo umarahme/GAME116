@@ -7,6 +7,7 @@ import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.paint.Color
 import scalafx.scene.shape.{Circle, Rectangle, Shape}
 import scalafx.scene.{Group, Scene}
+import Game116._
 
 object GUI2D extends JFXApp {
 
@@ -73,10 +74,12 @@ object GUI2D extends JFXApp {
 
 
     //
+
     val update: Long => Unit = (time: Long) => {
       for (shape <- allRectangles) {
         shape.rotate.value += 0.5
     }
+
     //
 
 
@@ -84,6 +87,7 @@ object GUI2D extends JFXApp {
 
     // Start Animations. Calls update 60 times per second (takes update as an argument)
     AnimationTimer(update).start()
+
   }
 
 }

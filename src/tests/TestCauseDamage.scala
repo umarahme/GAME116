@@ -6,7 +6,7 @@ import Game116.HealthPotion
 import Game116.Weapons
 import Game116.Location
 import Game116.Player
-
+/*
 class TestCauseDamage extends FunSuite{
   test("test attack functions"){
     var nLoc: Location = new Location(5,4)
@@ -37,3 +37,4 @@ class TestCauseDamage extends FunSuite{
 
   }
 }
+*/
