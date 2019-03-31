@@ -24,7 +24,7 @@ class TestEliminatePlayer extends FunSuite{
     var player6: Player = new Player("Carl",loc6)
     var newList: List[Player] = List(player1,player2,player3,player4,player5,player6)
     var newWorld: World = new World()
-    newWorld.players = newList
+    //newWorld.players = newList
     player1.health = 0
     Game.eliminatePlayer(newWorld)
     //eliminates player from beginning

@@ -13,10 +13,10 @@ abstract class KeyboardInputs(player: Player) extends EventHandler[KeyEvent] {
     val keyCode = event.getCode
     event.getEventType.getName match {
       case "KEY_RELEASED" => keyCode.getName match {
-        case this.LEFT => player.walkLeft()
-        case this.RIGHT => player.walkRight()
-        case this.UP => player.walkUp()
-        case this.DOWN => player.walkDown()
+        //case this.LEFT => player.walkLeft()
+        //case this.RIGHT => player.walkRight()
+        //case this.UP => player.walkUp()
+        //case this.DOWN => player.walkDown()
         case _ =>
       }
 

@@ -1,6 +1,6 @@
 package gui
 
-import Game116.{Game, HealthPotion, Player}
+import Game116.{HealthPotion, Player}
 import javafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.animation.AnimationTimer
 import scalafx.application.JFXApp

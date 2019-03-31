@@ -1,9 +1,7 @@
-package Game116
+package gui
 
-
-import scalafx.scene.paint.Color
-import gui.OurGUI
-import gui.OurGUI.{SCENE, newPotion}
+import Game116.{HealthPotion, Location, Player, Weapons}
+import gui.OurGUI.SCENE
 
 class Game {
 
