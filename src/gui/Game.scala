@@ -12,7 +12,7 @@ class Game {
   var h1: HealthPotion = new HealthPotion(new Location(Math.random()*500,Math.random*500))
 
   def update(deltaTime: Double): Unit = {
-    p1.update(deltaTime)
+    //p1.update(deltaTime)
   }
 
   def addPotion(p: Player, health: HealthPotion): Unit = {
@@ -54,7 +54,7 @@ class Game {
       p.health = p.health - w.damage
     }
   }
-
+/*
   def eliminatePlayer(w:World): Unit = {
     var i: Int = 0
     var first: List[Player] = List()
@@ -81,7 +81,7 @@ class Game {
       }
     }
   }
-
+*/
 
   def main(args: Array[String]): Unit = {
     var nLoc: Location = new Location(5,4)

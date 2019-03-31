@@ -7,7 +7,7 @@ import Game116.Weapons
 import Game116.Location
 import Game116.Player
 import Game116.World
-/*
+
 class TestEliminatePlayer extends FunSuite{
   test("test eliminate player"){
     var loc1: Location = new Location(4,3)
@@ -53,4 +53,3 @@ class TestEliminatePlayer extends FunSuite{
   }
 }
 
-*/
