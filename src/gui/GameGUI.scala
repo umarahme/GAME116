@@ -24,7 +24,9 @@ object GameGUI extends JFXApp {
   }
   val name: String = inputDisplay.text.value
   val player = new Player(name, Game.generateLocation)
+  val player2 = new Player("Test Dummy", Game.generateLocation)
   game.world.players = game.world.players :+ player
+  game.world.players = game.world.players :+ player2
 // Umar sucks on so many different types of balls its ridiculous. I am testing patyks dumb ass computer
   var sceneGraphics: Group = game.sceneGraphics
   Game.generateWeapons()
@@ -88,6 +90,7 @@ object GameGUI extends JFXApp {
       content = List(sceneGraphics)
     }
     sceneGraphics.children.add(player.playerIcon)
+    sceneGraphics.children.add(player2.playerIcon)
 }
   val button: Button = new Button {
     minWidth = 100
@@ -107,7 +110,7 @@ object GameGUI extends JFXApp {
       )
 
       // add an EventHandler[KeyEvent] to control player movement
-      addEventHandler(KeyEvent.ANY, new Keybinds(player))
+      addEventHandler(KeyEvent.ANY, new Keybinds(player,game))
 
     }
 

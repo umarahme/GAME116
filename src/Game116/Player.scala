@@ -7,7 +7,7 @@ import scalafx.scene.shape.Circle
 
 class Player(var name: String, var loc: Location) {
   var health: Double = 100
-  var attackAmt: Double = 3.0
+  var attackAmt: Double = 10.0
   var weaponsOwned: Double = 0.0
   var playerCircleRadius:Double = 20
   val playerSpeed: Double = 13.9

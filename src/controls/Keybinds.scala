@@ -2,12 +2,11 @@ package controls
 
 import javafx.event.EventHandler
 import javafx.scene.input.KeyEvent
-import Game116.Player
-import Game116.World
+import Game116.{Player, World, gameState}
 import gui.GameGUI
 
 
-class Keybinds(player:Player) extends EventHandler[KeyEvent] {
+class Keybinds(player:Player,game:gameState) extends EventHandler[KeyEvent] {
   val LEFT: String = "A"
   val RIGHT: String = "D"
   val UP: String = "W"
@@ -39,7 +38,7 @@ class Keybinds(player:Player) extends EventHandler[KeyEvent] {
           GameGUI.addPotion(player)
         }
         case this.Attack => {
-          player.attack(this.player)
+          player.attack(this.player,game)
         }
         case _ =>{
           GameGUI.addPotion(player)
