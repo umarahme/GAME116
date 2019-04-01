@@ -43,6 +43,7 @@ class Keybinds(player:Player) extends EventHandler[KeyEvent] {
         }
         case _ =>{
           GameGUI.addPotion(player)
+          println(player.playerIcon.translateX.value)
         }
       }
       case _ =>
