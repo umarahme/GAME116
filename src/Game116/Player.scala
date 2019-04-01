@@ -1,6 +1,7 @@
 package Game116
 
 import gui.GameGUI
+import gui.GameGUI.sceneGraphics
 import scalafx.scene.paint.Color
 import scalafx.scene.shape.Circle
 
@@ -9,7 +10,7 @@ class Player(var name: String, var loc: Location) {
   var attackAmt: Double = 3.0
   var weaponsOwned: Double = 0.0
   var playerCircleRadius:Double = 20
-  val playerSpeed: Double = 10
+  val playerSpeed: Double = 13.9
   // moving these var here lets us modify them and clear up the gui
   var playerIcon: Circle = new Circle {
     translateX = Math.random() * GameGUI.windowWidth
@@ -17,16 +18,19 @@ class Player(var name: String, var loc: Location) {
     radius = playerCircleRadius
     fill = Color.Green
   }
-  def attack(p2: Player): Unit = {
-    println("this")
-    if(Math.abs(p2.loc.x-this.loc.x) <=2 && Math.abs(p2.loc.y-this.loc.y)<=2){
-      println(this.loc.x)
-      println(this.loc.y)
-      p2.health = p2.health - attackAmt
+  def attack(attackingPlayer: Player,game:gameState): Unit = {
+    for (otherPlayers <- game.world.players) {
+      if (attackingPlayer != otherPlayers){
+        if (Math.abs(attackingPlayer.playerIcon.translateX.value - otherPlayers.playerIcon.translateX.value) <= 20 &&
+          Math.abs(attackingPlayer.playerIcon.translateY.value - otherPlayers.playerIcon.translateY.value) <= 20) {
+          otherPlayers.health = otherPlayers.health - attackingPlayer.attackAmt
+          if (otherPlayers.health <= 0){
+            sceneGraphics.children.remove(otherPlayers.playerIcon)
+            println(otherPlayers.name," got wrecked")
+          }
+          //Game.eliminatePlayer(game.world) This was supposed to eliminate my dude but he still breathing in the negative health
+        }
+      }
     }
-    //i think were going to have to implement an animation-ish update call.I tried sleep and that didnt work
-    //either here or in the kaybinds class
-    this.playerIcon.radius = 30
-    this.playerIcon.radius = 20
   }
 }
