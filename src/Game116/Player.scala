@@ -12,8 +12,8 @@ class Player(var name: String, var loc: Location) {
   val playerSpeed: Double = 10
   // moving these var here lets us modify them and clear up the gui
   var playerIcon: Circle = new Circle {
-    centerX = Math.random() * GameGUI.windowWidth
-    centerY = Math.random() * GameGUI.windowHeight
+    translateX = Math.random() * GameGUI.windowWidth
+    translateY = Math.random() * GameGUI.windowHeight
     radius = playerCircleRadius
     fill = Color.Green
   }
