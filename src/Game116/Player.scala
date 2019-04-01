@@ -24,6 +24,7 @@ class Player(var name: String, var loc: Location) {
         if (Math.abs(attackingPlayer.playerIcon.translateX.value - otherPlayers.playerIcon.translateX.value) <= 20 &&
           Math.abs(attackingPlayer.playerIcon.translateY.value - otherPlayers.playerIcon.translateY.value) <= 20) {
           otherPlayers.health = otherPlayers.health - attackingPlayer.attackAmt
+          println("Player2 Health: "+ otherPlayers.health)
           if (otherPlayers.health <= 0){
             sceneGraphics.children.remove(otherPlayers.playerIcon)
             println(otherPlayers.name," got wrecked")

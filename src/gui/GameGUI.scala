@@ -9,6 +9,7 @@ import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.{Group, Scene}
 import controls.Keybinds
 import javafx.event.ActionEvent
+import scalafx.print.PrintColor.Color
 import scalafx.scene.layout.VBox
 import scalafx.scene.control.{Button, TextField}
 import scalafx.scene.shape.Circle
@@ -42,6 +43,7 @@ object GameGUI extends JFXApp {
   var n9: Circle = game.world.potions(8).Icon
   var n10: Circle = game.world.potions(9).Icon
 
+
   var nList: ListBuffer[Circle] = ListBuffer(n1,n2,n3,n4,n5,n6,n7,n8,n9,n10)
 
   sceneGraphics.children.add(n1)
@@ -64,8 +66,8 @@ object GameGUI extends JFXApp {
         sceneGraphics.children.remove(health)
         var tempIndex: Int = nList.indexOf(health)
 
-        println(p.health)
-        println(game.world.potions(tempIndex).potion)
+        println("Player1's Health: " + p.health)
+        println("Potion's value: "+ game.world.potions(tempIndex).potion)
 
         if (p.health == 100) {
           p.health = 100
@@ -77,8 +79,8 @@ object GameGUI extends JFXApp {
 
         game.world.potions(tempIndex).potion = 0
 
-        println(p.health)
-        println(game.world.potions(tempIndex).potion)
+        println("Player1's Health: "+ p.health)
+        println("Potion's value: "+ game.world.potions(tempIndex).potion)
 
       }
     }
