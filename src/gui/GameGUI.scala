@@ -20,8 +20,10 @@ object GameGUI extends JFXApp {
   }
   val name: String = inputDisplay.text.value
   val player = new Player(name, Game.generateLocation)
+  val player2 = new Player("Patryk", Game.generateLocation)// lol his name is a spelling error
   game.world.players = game.world.players :+ player
-// Umar sucks on so many different types of balls its ridiculous. I am testing patyks dumb ass computer
+  game.world.players = game.world.players :+ player2
+
   var sceneGraphics: Group = game.sceneGraphics
   Game.generateWeapons()
   Game.generatePotions()
@@ -31,6 +33,7 @@ object GameGUI extends JFXApp {
       content = List(sceneGraphics)
     }
     sceneGraphics.children.add(player.playerIcon)
+    sceneGraphics.children.add(player2.playerIcon)
   }
   val button: Button = new Button {
     minWidth = 100
@@ -50,7 +53,7 @@ object GameGUI extends JFXApp {
       )
 
       // add an EventHandler[KeyEvent] to control player movement
-      addEventHandler(KeyEvent.ANY, new Keybinds(player))
+      addEventHandler(KeyEvent.ANY, new Keybinds(player,game))
 
     }
 
