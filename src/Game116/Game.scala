@@ -82,7 +82,7 @@ object Game {
       //sceneGraphics.children.add(newPotion.Icon)
     }
   }
-
+//devante DEVANTE
 
   def generateWeapons(): Unit = {
     var weaponList: ListBuffer[Weapons] = game.world.weapons
