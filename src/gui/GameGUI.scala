@@ -53,7 +53,7 @@ object GameGUI extends JFXApp {
   sceneGraphics.children.add(n9)
   sceneGraphics.children.add(n10)
 
-
+//this is the addpotion function that is supposed to be called
   def addPotion(p: Player): Unit = {
     for(health <- GameGUI.nList) {
       if (Math.abs(p.playerIcon.translateX.value - health.translateX.value) <= 30 && Math.abs(p.playerIcon.translateY.value - health.translateY.value) <= 30) {
