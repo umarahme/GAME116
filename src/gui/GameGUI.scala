@@ -1,7 +1,5 @@
 package gui
 
-
-import Game116.Game.game
 import Game116.{Game, Player, gameState}
 import javafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.application.JFXApp

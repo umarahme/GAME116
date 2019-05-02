@@ -1,5 +1,5 @@
 package tests
-import Game116.{Game, Location, Player, gameState}
+import Game116.{Location, Player, gameState,Game}
 import org.scalatest.FunSuite
 
 class testAttack extends FunSuite{

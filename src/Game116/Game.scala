@@ -82,7 +82,7 @@ object Game {
       //sceneGraphics.children.add(newPotion.Icon)
     }
   }
-//devante DEVANTE
+
 
   def generateWeapons(): Unit = {
     var weaponList: ListBuffer[Weapons] = game.world.weapons
@@ -92,36 +92,6 @@ object Game {
       sceneGraphics.children.add(newWeapon.Icon)
     }
   }
-
-/*
-  def addPotion(p: Player): Unit = {
-    for(health <- GameGUI.nList) {
-      if (Math.abs(p.playerIcon.translateX.value - health.translateX.value) <= 39 && Math.abs(p.playerIcon.translateY.value - health.translateY.value) <= 39) {
-        println(p.playerIcon.translateX.value)
-        println(health.translateX.value)
-        println(p.playerIcon.translateX.value - health.translateX.value)
-        println(health)
-        //health.fill = Color.White
-        sceneGraphics.children.remove(health)
-        /*
-      if (p.health == 100) {
-        p.health = 100
-        health.potion = 0
-      } else if (p.health + health.potion >= 100) {
-        p.health = 100
-        health.potion = 0
-      } else {
-        p.health = p.health + health.potion
-        health.potion = 0
-      }
-      */
-        //newPotion.fill = Color.White
-      }
-    }
-  }
-  */
-  //can reuse these functions to generate and add them to the game
-
 
 }
 
