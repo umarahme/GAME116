@@ -2,6 +2,7 @@ import json
 import socket
 from threading import Thread
 from random import randint
+
 from flask import Flask, send_from_directory, request, render_template
 from flask_socketio import SocketIO
 
@@ -63,6 +64,14 @@ def got_connection():
         print(username + " disconnected")
         message = {"username": username, "action": "disconnected"}
         send_to_scala(message)
+
+
+@socket_server.on('play')
+def attack():
+    username = sidToUsername[request.sid]
+    print(username + "is playing")
+    message = {"username": username, "action": "play"}
+    send_to_scala(message)
 
 
 @app.route('/')

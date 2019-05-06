@@ -4,7 +4,8 @@ import gui.GameGUI
 import scalafx.scene.paint.Color
 import scalafx.scene.shape.Circle
 
-class HealthPotion(loc: Location) extends Items(loc){
+class HealthPotion(loc: Location){
+  var name: String = (loc.x, loc.y).toString()
   var size: Double = 10
   var potion: Double = 20.0
   var Loc: Location = loc

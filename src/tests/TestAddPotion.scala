@@ -1,4 +1,4 @@
-package tests
+/*package tests
 import org.scalatest._
 import Game116.HealthPotion
 import Game116.Weapons
@@ -43,4 +43,4 @@ class TestAddPotion extends FunSuite{
 
   }
 }
-
+*/

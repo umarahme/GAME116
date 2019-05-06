@@ -21,6 +21,13 @@
             <version>11-R16</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/net.liftweb/lift-json -->
+        <dependency>
+            <groupId>net.liftweb</groupId>
+            <artifactId>lift-json_2.12</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.typesafe.play/play-json -->
         <dependency>
             <groupId>com.typesafe.play</groupId>
@@ -47,6 +54,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.socket</groupId>
+            <artifactId>socket.io-client</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
     </dependencies>

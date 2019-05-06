@@ -1,10 +1,10 @@
-package tests
-import Game116.{Location, Player, gameState,Game}
+/*package tests
+import Game116.{Location, Player, ,Game}
 import org.scalatest.FunSuite
 
 class testAttack extends FunSuite{
     test("attack functionality"){
-      val game:gameState = Game.game
+      val game: = Game.game
       val player1:Player = new Player("DeVante",new Location(0,0))
       val player2:Player = new Player("Umar",new Location(0,0))
       val player3:Player = new Player("Patryk",new Location(0,0))
@@ -82,3 +82,4 @@ class testAttack extends FunSuite{
 
     }
 }
+*/

@@ -4,7 +4,7 @@ import gui.GameGUI
 import scalafx.scene.paint.Color
 import scalafx.scene.shape.Circle
 
-class Weapons(loc: Location) extends Items(loc) {
+class Weapons(loc: Location){
   var damage: Double = 10.0
   var Loc: Location = loc
   var size: Double = 15
